@@ -14,5 +14,8 @@ public class PlayerControl : MonoBehaviour {
             playerBounds = new Rect(new Vector2(transform.position.x, transform.position.y) - (new Vector2(50f, 50f)), new Vector2(100f, 100f));
             this.transform.position = Input.mousePosition;
         }
+
+
+
     }
 }

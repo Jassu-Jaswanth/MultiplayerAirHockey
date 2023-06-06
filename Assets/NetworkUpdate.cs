@@ -8,6 +8,7 @@ public class NetworkUpdate : NetworkBehaviour {
     [SerializeField] GameObject opponent;
     [SerializeField] GameObject ball;
     
+    
     private void Update() {
         if (IsClient && !IsHost) {
             TestServerRpc(GetComponent<RectTransform>().anchoredPosition);
