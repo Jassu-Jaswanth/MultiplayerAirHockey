@@ -14,8 +14,15 @@ public class PlayerControl : MonoBehaviour {
             playerBounds = new Rect(new Vector2(transform.position.x, transform.position.y) - (new Vector2(50f, 50f)), new Vector2(100f, 100f));
             this.transform.position = Input.mousePosition;
         }
-
-
+        #if UNITY_ANDROID
+        if(Input.touchCount > 0){
+            Touch touch = Input.GetTouch(0);
+            if(playerBounds.Contains(touch.position)){
+                playerBounds = new Rect(new Vector2(transform.position.x, transform.position.y) - (new Vector2(50f, 50f)), new Vector2(100f, 100f));
+                this.transform.position = touch.position;
+            }
+        }
+        #endif
 
     }
 }
